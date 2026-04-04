@@ -20,6 +20,6 @@
 ---
 include:
   - board: nice_nano
-    shield: helix_left
+    shield: plankdiv2_left
   - board: nice_nano
-    shield: helix_right
+    shield: plankdiv2_right

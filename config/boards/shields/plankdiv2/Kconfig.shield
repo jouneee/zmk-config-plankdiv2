@@ -1,0 +1,8 @@
+# Copyright (c) 2020 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_PLANKDIV2_LEFT
+    def_bool $(shields_list_contains,plankdiv2_left)
+
+config SHIELD_PLANKDIV2_RIGHT
+    def_bool $(shields_list_contains,plankdiv2_right)
