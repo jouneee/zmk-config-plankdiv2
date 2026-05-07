@@ -15,8 +15,6 @@
  #define LOWER  1
  #define RAISE  2
  #define ADJUST 3
- #define PSBK PAUSE_BREAK
- #define bootloader btldr
 
 /* NOTE: At the time of the creation of this keymap, there are no specified codes for 'eisuu' and 'kana' input in ZMK.
 However, 'LANG1' and 'LANG2' are fully-functioning candidates for 'kana' and 'eisuu' input respectively.
@@ -32,7 +30,7 @@ As such, those are in use within the default layer at this time.*/
     // |  TAB    |   Q    |   W    |   E    |   R    |   T       |                           |   Y    |   U      |   I      |   O      |   P    |  BSPC  |
     // |  ESC    |   A    |   S    |   D    |   F    |   G       |                           |   H    |   J      |   K      |   L      |   ;    |   '    |
     // | LSHIFT  |   Z    |   X    |   C    |   V    |   B       |  LBKT  |       |  RBKT    |   N    |   M      |   ,      |   .      |   /    |  RET   |
-    // | LCTRL   |  LGUI  |  LALT  | SPACE  | LOWER  | SPACE     | ADJUST |       | ADJUST   | SPACE  | RAISE    | LEFT     | DOWN     |  UP    | RIGHT  |
+    // | LCTRL   |  LGUI  |  LALT  | SPACE  | LOWER  | SPACE     | ADJUST |       | ADzzzzzzJUST   | SPACE  | RAISE    | LEFT     | DOWN     |  UP    | RIGHT  |
                      bindings = <
        &kp GRAVE  &kp N1   &kp N2   &kp N3    &kp N4    &kp N5    &kp DEL          &kp PSBK   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0    &kp DEL
        &kp TAB    &kp Q    &kp W    &kp E     &kp R     &kp T     &kp BSPC         &kp PG_UP  &kp Y     &kp U     &kp I     &kp O      &kp P     &kp BSPC
@@ -64,7 +62,7 @@ As such, those are in use within the default layer at this time.*/
     // |       |       |       |       |       |  F11  |                        |  F12   | PSCRN    |        | VOL-       | VOL+       | PG_UP |
     // |       |       |       |       |       |       |                        |        |          |        |            |            | PG_DN |
                      bindings = <
-        &trans    &trans  &trans  &trans  &trans  &trans   &trans         &trans  &trans   &trans     &trans   &trans       &trans       &kp PSBK
+        &trans    &trans  &trans  &trans  &trans  &trans   &trans         &trans  &trans   &trans     &trans   &trans       &trans       &kp PAUSE_BREAK
         &kp GRAVE &kp N1  &kp N2  &kp N3  &kp N4  &kp N5   &trans         &trans  &kp N6   &kp N7     &kp N8   &kp N9       &kp N0       &kp HOME
         &trans    &kp F1  &kp F2  &kp F3  &kp F4  &kp F5   &trans         &trans  &kp F6   &kp F7     &kp F8   &kp F9       &kp F10      &kp END
         &trans    &trans  &trans  &trans  &trans  &kp F11  &trans         &trans  &kp F12  &kp PSCRN  &trans   &kp C_VOL_DN &kp C_VOL_UP &kp PG_UP
@@ -79,7 +77,7 @@ As such, those are in use within the default layer at this time.*/
  // |  BT PRV  |          |          |          |          |          |    {     |                    |    }     |          |          |          |          |          |          |
  // |          |          |          |          |          |          |          |                    |          |          |          |          |          |          |          |
                      bindings = <
-       &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    &btldr           &btldr     &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &ext_power EP_TOG
+       &kp GRAVE  &kp EXCL     &kp AT       &kp HASH     &kp DLLR     &kp PRCNT    &bootloader           &bootloader     &kp CARET  &kp AMPS  &kp ASTRK  &kp LPAR  &kp RPAR  &ext_power EP_TOG
        &bt BT_CLR &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans           &trans     &trans     &trans    &trans     &trans    &trans    &trans
        &bt BT_NXT &out OUT_TOG &out OUT_USB &out OUT_BLE &trans       &trans       &trans           &trans     &trans     &trans    &trans     &trans    &trans    &trans
        &bt BT_PRV &trans       &trans       &trans       &trans       &trans       &kp LBRC         &kp RBRC   &trans     &trans    &trans     &trans    &trans    &trans
