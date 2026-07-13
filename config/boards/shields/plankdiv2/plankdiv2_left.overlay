@@ -14,10 +14,6 @@
     };
 };
 
-&uart0 {
-    status = "disabled";
-};
-
 &pinctrl {
     my_i2c0_default: my_i2c0_default {
         group1 {
@@ -49,8 +45,8 @@
         status = "okay";
 
         /* GPIO connections */
-        rdy-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;  /* RDY pin */
-        rst-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;  /* RST pin */
+        rdy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;  /* RDY pin */
+        rst-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;  /* RST pin */
 
         enable-power-management;
 
