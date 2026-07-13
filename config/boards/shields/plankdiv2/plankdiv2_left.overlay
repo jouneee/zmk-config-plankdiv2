@@ -13,7 +13,6 @@
 
         tps43_input: tps43_split@0 {
             compatible = "zmk,input-listener";
-            reg = <0>;
             device = <&tps43_trackpad>;
         };
     };
