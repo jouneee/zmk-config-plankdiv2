@@ -10,53 +10,6 @@
     col-offset = <7>;
 };
 
-&pro_micro_i2c {
-    status = "okay";
-    clock-frequency = <I2C_BITRATE_FAST>;
-    tps43: iqs5xx@74 {
-        compatible = "azoteq,tps43";
-        reg = <0x74>;
-        status = "okay";
-
-        /* GPIO connections */
-        rdy-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;  /* RDY pin */
-        rst-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;  /* RST pin */
-
-        enable-power-management;
-
-        sensitivity = <100>;           /* 100% = normal state */
-        scroll-sensitivity = <50>;     /* 50% = normal state */
-        zoom-sensitivity = <50>;       /* 50% = normal state */
-
-        filter-settings=<0x0B>;        /* See filter description in `available settings` */
-        // filter-dynamic-bottom=<7>;     /* Dynamic filter bottom beta (optional) */
-        // filter-dynamic-lower=<6>;      /* Dynamic filter lower speed (optional) */
-        // filter-dynamic-upper=<0xFA>;   /* Dynamic filter upper speed (optional) */
-        x-resolution=<2048>;            /* X resolution in pixels */
-        y-resolution=<1792>;            /* Y resolution in pixels */
-
-        // swipe-initial-distance=<500>;          /* Swipe initial distance in px (optional) */
-        // swipe-initial-time=<200>;              /* Swipe initial time in ms (optional) */
-        // swipe-angle=<20>;                      /* Max swipe angle in degrees (optional) */
-        // swipe-consecutive-distance=<200>;      /* Swipe consecutive distance in px (optional) */
-        // swipe-consecutive-time=<150>;          /* Swipe consecutive time in ms (optional) */
-        // scroll-initial-distance=<100>;         /* Scroll initial distance in px (optional) */
-        // scroll-angle=<30>;                     /* Max scroll angle in degrees (optional) */
-        // zoom-initial-distance=<100>;           /* Zoom initial distance in px (optional) */
-        // zoom-consecutive-distance=<50>;        /* Zoom consecutive distance in px (optional) */
-
-        scroll;
-        two-finger-tap;
-        single-tap;
-        press-and-hold;
-        swipes;
-        zoom;
-
-        switch-xy;
-        invert-scroll-y;
-    };
-};
-
 &kscan0 {
     col-gpios
         = <&pro_micro 16 GPIO_ACTIVE_HIGH>
