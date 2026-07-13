@@ -11,7 +11,7 @@
         #address-cells = <1>;
         #size-cells = <0>;
 
-        tps43_input: tps43_split@0 {
+        tps43_input: tps43_input {
             compatible = "zmk,input-listener";
             device = <&tps43_trackpad>;
         };
