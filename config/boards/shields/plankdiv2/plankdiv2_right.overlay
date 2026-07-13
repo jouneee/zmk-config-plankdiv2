@@ -54,7 +54,6 @@
         rst-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
-        idle-sleep;
 
         sensitivity = <100>;
         scroll-sensitivity = <50>;
