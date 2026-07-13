@@ -4,14 +4,14 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: geeksville
-      url-base: https://github.com/geeksville
+    - name: AYM1607
+      url-base: https://github.com/AYM1607
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
-    - name: zmk_driver_azoteq
-      remote: geeksville
-      revision: master
+    - name: zmk-driver-azoteq-iqs5xx
+      remote: AYM1607
+      revision: main
   self:
     path: config

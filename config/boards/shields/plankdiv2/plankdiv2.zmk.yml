@@ -1,0 +1,12 @@
+file_format: "1"
+id: plankdiv2
+name: Plankdiv2
+type: shield
+url: https://github.com/jouneee/zmk-config-plankdiv2
+requires: [pro_micro]
+features:
+  - keys
+  - pointer
+siblings:
+  - plankdiv2_left
+  - plankdiv2_right
