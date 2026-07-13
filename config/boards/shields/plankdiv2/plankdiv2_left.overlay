@@ -14,14 +14,53 @@
         tps43_split: tps43_split@0 {
             compatible = "zmk,input-split";
             reg = <0>;
-            /* No device property here - this is a proxy on the central side */
+            device = <&tps43_trackpad>;
+        };
+    };
+};
+
+&pinctrl {
+    my_i2c0_default: my_i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 1, 20)>;
+            bias-pull-up;
         };
     };
 
-    tps43_listener: tps43_listener {
-        compatible = "zmk,input-listener";
-        device = <&tps43_split>;
+    my_i2c0_sleep: my_i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 1, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 1, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&my_i2c0_default>;
+    pinctrl-1 = <&my_i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
         status = "okay";
+        rdy-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+        enable-power-management;
+        sensitivity = <100>;
+        scroll-sensitivity = <50>;
+        zoom-sensitivity = <50>;
+        filter-settings = <0x0B>;
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        swipes;
+        zoom;
     };
 };
 
