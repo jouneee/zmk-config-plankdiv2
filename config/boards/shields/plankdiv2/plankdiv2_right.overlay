@@ -50,8 +50,8 @@
         status = "okay";
 
         /* Wired to free pins to avoid clashing with matrix col-gpios 20 and 21 */
-        rdy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
-        rst-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
+        rdy-gpios = <&pro_micro 2 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 3 GPIO_ACTIVE_HIGH>;
 
         enable-power-management;
         idle-sleep;
