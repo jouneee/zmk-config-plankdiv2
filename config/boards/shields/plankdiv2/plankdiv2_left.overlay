@@ -6,6 +6,7 @@
 
 #include "plankdiv2.dtsi"
 
+
 / {
     tps43_input: tps43_input {
         compatible = "zmk,input-listener";
@@ -17,9 +18,31 @@
     status = "disabled";
 };
 
-&pro_micro_i2c {
+&pinctrl {
+    my_i2c0_default: my_i2c0_default {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,   /* Pro Micro 2 */
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;   /* Pro Micro 3 */
+            bias-pull-up;                          /* Enforces internal pull-up */
+        };
+    };
+
+    my_i2c0_sleep: my_i2c0_sleep {
+        group1 {
+            psels = <NRF_PSEL(TWIM_SDA, 0, 17)>,
+                    <NRF_PSEL(TWIM_SCL, 0, 20)>;
+            low-power-enable;
+        };
+    };
+};
+
+&i2c0 {
     status = "okay";
     clock-frequency = <I2C_BITRATE_STANDARD>;
+    pinctrl-0 = <&my_i2c0_default>;
+    pinctrl-1 = <&my_i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
     tps43: iqs5xx@74 {
         compatible = "azoteq,tps43";
         reg = <0x74>;
@@ -29,7 +52,7 @@
         rdy-gpios = <&pro_micro 1 GPIO_ACTIVE_HIGH>;  /* RDY pin */
         rst-gpios = <&pro_micro 0 GPIO_ACTIVE_HIGH>;  /* RST pin */
 
-        // enable-power-management;
+        enable-power-management;
 
         sensitivity = <100>;           /* 100% = normal state */
         scroll-sensitivity = <50>;     /* 50% = normal state */
