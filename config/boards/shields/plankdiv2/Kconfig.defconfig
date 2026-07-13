@@ -13,6 +13,12 @@ endif
 
 if SHIELD_PLANKDIV2_LEFT || SHIELD_PLANKDIV2_RIGHT
 
+config I2C
+    default y
+
+config INPUT_TPS43
+    default y
+
 config ZMK_SPLIT
     default y
 

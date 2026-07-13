@@ -6,6 +6,55 @@
 
 #include "plankdiv2.dtsi"
 
+/ {
+    split_inputs {
+        #address-cells = <1>;
+        #size-cells = <0>;
+
+        tps43_split: tps43_split@0 {
+            compatible = "zmk,input-split";
+            reg = <0>;
+            device = <&tps43_trackpad>;
+        };
+    };
+};
+
+&i2c0 {
+    status = "okay";
+    clock-frequency = <I2C_BITRATE_FAST>;
+    pinctrl-0 = <&my_i2c0_default>;
+    pinctrl-1 = <&my_i2c0_sleep>;
+    pinctrl-names = "default", "sleep";
+
+    tps43_trackpad: trackpad@74 {
+        compatible = "azoteq,tps43";
+        reg = <0x74>;
+        status = "okay";
+
+        /* Wired to free pins to avoid clashing with matrix col-gpios 20 and 21 */
+        rdy-gpios = <&pro_micro 9 GPIO_ACTIVE_HIGH>;
+        rst-gpios = <&pro_micro 10 GPIO_ACTIVE_HIGH>;
+
+        enable-power-management;
+        idle-sleep;
+
+        sensitivity = <100>;
+        scroll-sensitivity = <50>;
+        zoom-sensitivity = <50>;
+
+        filter-settings = <0x0B>;
+        x-resolution = <2048>;
+        y-resolution = <1792>;
+
+        scroll;
+        two-finger-tap;
+        single-tap;
+        press-and-hold;
+        swipes;
+        zoom;
+    };
+};
+
 &default_transform {
     col-offset = <7>;
 };
