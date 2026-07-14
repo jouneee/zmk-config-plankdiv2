@@ -12,6 +12,6 @@ manifest:
       import: app/west.yml
     - name: zmk_driver_azoteq
       remote: beekeeb
-      revision: main
+      revision: master
   self:
     path: config
