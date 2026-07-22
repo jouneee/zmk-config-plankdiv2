@@ -25,11 +25,11 @@
             // Row 4: trans on col 0,1,9,10,11; keys on col 2-8
             bindings = <
                 // Row 0 (top)
-                &kp N1   &kp N2   &kp N3    &kp N4    &kp N5    &kp DEL          &kp PAUSE_BREAK   &kp N6    &kp N7    &kp N8    &kp N9     &kp N0
-                &kp Q    &kp W    &kp E     &kp R     &kp T     &kp BSPC         &kp PG_UP          &kp Y     &kp U     &kp I     &kp O      &kp P
-                &kp A    &kp S    &kp D     &kp F     &kp G     &kp RET          &kp PG_DN          &kp H     &kp J     &kp K     &kp L      &kp SEMI
-                &kp Z    &kp X    &kp C     &kp V     &kp B     &kp LBKT         &kp RBKT           &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH
-                &trans   &trans   &trans    &mo LOWER &kp SPACE &mo ADJUST       &mo ADJUST         &kp SPACE &mo RAISE &trans    &trans     &trans
+                &kp N1   &kp N2   &kp N3    &kp N4    &kp N5    &kp N6           &kp N6     &kp N7    &kp N8    &kp N9    &kp N0     &kp PLUS
+                &kp Q    &kp W    &kp E     &kp R     &kp T     &kp BSPC         &kp PG_UP  &kp Y     &kp U     &kp I     &kp O      &kp P
+                &kp A    &kp S    &kp D     &kp F     &kp G     &kp RET          &kp PG_DN  &kp H     &kp J     &kp K     &kp L      &kp SEMI
+                &kp Z    &kp X    &kp C     &kp V     &kp B     &kp LBKT         &kp RBKT   &kp N     &kp M     &kp COMMA &kp PERIOD &kp SLASH
+                &trans   &trans   &trans    &mo LOWER &kp SPACE &mo ADJUST       &mo ADJUST &kp SPACE &mo RAISE &trans    &trans     &trans
             >;
         };
 
