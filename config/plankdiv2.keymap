@@ -44,7 +44,7 @@
             bindings = <
                 &trans    &trans   &trans   &trans   &trans      &kp PSCRN          &kp PAUSE_BREAK &trans    &trans     &trans  &trans     &trans
                 &trans    &trans   &trans   &trans   &trans      &trans             &trans          &trans    &trans     &trans  &trans     &trans
-                &trans    &trans   &trans   &trans   &trans      &PG_DN             &PG_UP          &kp LEFT  &kp DOWN   &kp UP  &kp RIGHT  &trans
+                &trans    &kp LEFT &kp DOWN &kp UP   &kp RIGHT   &PG_DN             &PG_UP          &kp LEFT  &kp DOWN   &kp UP  &kp RIGHT  &trans
                 &trans    &trans   &trans   &trans   &trans      &trans             &trans          &trans    &trans     &trans  &trans     &trans
                 &trans    &trans   &trans   &trans   &kp SPACE   &trans             &trans          &kp SPACE &mo ADJUST &trans  &trans     &trans
             >;
